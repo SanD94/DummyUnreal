@@ -9,14 +9,22 @@
 #ifndef FBullCowGame_hpp
 #define FBullCowGame_hpp
 
-#include <iostream>
+#include <string>
 
 class FBullCowGame {
 public:
+    FBullCowGame();
+    
+    int GetMaxTries() const;
+    int GetCurrentTry() const;
+    bool IsGameWon() const;
+    
     void Reset(); // TODO: Make a more rich return value
-    int GetMaxTries();
+    bool CheckGuessValidity(std::string);
+    
     
 private:
+    // see constructor for initialization
     int CurrentTry;
     int MaxTries;
     bool IsIsogram(std::string);
